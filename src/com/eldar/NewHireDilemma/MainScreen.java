@@ -63,7 +63,7 @@ public class MainScreen extends JFrame {
        colorCheck.setText("Colored?");
        colorCheck.setForeground(Color.YELLOW);
        colorCheck.setBackground(Color.BLUE);
-       colorCheck.setSelected(false);
+       colorCheck.setSelected(true);
        controlPanel.add(colorCheck);
 
        // Reset button.
