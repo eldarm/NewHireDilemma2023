@@ -1,0 +1,46 @@
+git init -b main
+...do some work...
+git commit
+
+
+
+Create Gihub repository if have not done so yet.
+
+git config remote.origin.url git+ssh://git@github.com/<user>/<your-repository>.git
+
+In my case:
+git config remote.origin.url git+ssh://git@github.com/eldarm/NewHireDilemma2023.git
+
+Verify your configuration:
+git config -l
+
+You should see at least user.name, user.email and remote.origin.url, in my case:
+user.name=eldarm
+user.email=junk@eldar.com
+and
+remote.origin.url=git+ssh://git@github.com/eldarm/NewHireDilemma2023.git
+
+
+Generate keys:
+ssh-keygen
+Put them into ~/.ssh/
+for example: ~/.ssh/myghkeys
+You will get two files there:
+myghkeys and myghkeys.pub
+
+In Gitub go to your profile | setting | my SSH keys, and add an SSH key.
+Name it as you like, copy the content of your *.pub file, you just generated, in my case myghleys.pub.
+
+Verify that keys work:
+ssh -T git@github.com
+
+First time you will get a warning, just agree. The second time you will get congrats:
+Hi <your name>! You've successfully authenticated, but GitHub does not provide shell access.
+
+Finally, you can push your code to Github:
+
+git push -u origin main
+
+Done.
+
+
